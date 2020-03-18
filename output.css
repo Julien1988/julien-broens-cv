@@ -1,3 +1,13 @@
+.title-primary {
+  color: white;
+}
 
+.header {
+  position: absolute;
+  width: 100%;
+}
+.header__title {
+  text-align: center;
+}
 
 /*# sourceMappingURL=output.css.map */
