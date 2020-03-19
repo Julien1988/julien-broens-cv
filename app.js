@@ -62,7 +62,7 @@ function init() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   // LIGNE A CHANGER
   // document.body.appendChild(renderer.domElement);
-  document.querySelector(".header").appendChild(renderer.domElement);
+  document.querySelector(".section-top").appendChild(renderer.domElement);
 
   //
 

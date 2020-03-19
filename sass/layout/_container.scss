@@ -4,12 +4,15 @@
   width: 100%;
   //color: $primary-color;
   &__section {
-    &__title {
-      text-align: center;
-    }
     &__container {
       padding-top: 2em;
-      background-color: black;
+      &__title {
+        text-align: center;
+        position: relative;
+
+        width: 100%;
+      }
+      // background-color: black;
       &__list {
         text-align: center;
         &__item {
@@ -25,11 +28,17 @@
 }
 
 .section-top {
-  background-color: black;
+  //background-color: black;
   color: white;
-  border-top: 2px solid blue;
+  //border-top: 2px solid blue;
+}
+
+.main__section__container {
+  position: absolute;
+  width: 100%;
 }
 
 canvas {
-  //max-height: 30em;
+  position: absolute;
+  z-index: -1;
 }
