@@ -64,18 +64,18 @@ function init() {
 
   //
 
-  stats = new Stats();
-  document.body.appendChild(stats.dom);
+  // stats = new Stats();
+  // document.body.appendChild(stats.dom);
 
   //
 
-  var gui = new GUI();
+  // var gui = new GUI();
 
-  gui.add(material, "sizeAttenuation").onChange(function() {
-    material.needsUpdate = true;
-  });
+  // gui.add(material, "sizeAttenuation").onChange(function() {
+  //   material.needsUpdate = true;
+  // });
 
-  gui.open();
+  // gui.open();
 
   //
 
