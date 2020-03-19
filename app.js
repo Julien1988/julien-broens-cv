@@ -143,3 +143,5 @@ function render() {
 
   renderer.render(scene, camera);
 }
+
+// END OF CODE FOR THREE.JS

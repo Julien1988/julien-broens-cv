@@ -1,13 +1,39 @@
-.title-primary {
+.title-primary,
+.title-secondary {
   color: white;
 }
 
 .header {
   position: absolute;
   width: 100%;
+  max-height: 20em;
 }
 .header__title {
   text-align: center;
+}
+.header__subtitle {
+  text-align: center;
+}
+
+.my-menu {
+  background-color: white;
+}
+.my-menu .nav-wrapper a,
+.my-menu .nav-wrapper ul {
+  color: rgba(0, 0, 0, 0.568);
+}
+
+.main {
+  position: absolute;
+  padding-top: 35em;
+  width: 100%;
+}
+.main__title {
+  text-align: center;
+}
+
+canvas {
+  max-height: 30em;
 }
 
 /*# sourceMappingURL=output.css.map */

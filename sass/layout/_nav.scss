@@ -1,0 +1,9 @@
+.my-menu {
+  background-color: $primary-color;
+  .nav-wrapper {
+    a,
+    ul {
+      color: $secondary-color;
+    }
+  }
+}

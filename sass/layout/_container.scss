@@ -1,0 +1,13 @@
+.main {
+  position: absolute;
+  padding-top: 35em;
+  width: 100%;
+  //color: $primary-color;
+  &__title {
+    text-align: center;
+  }
+}
+
+canvas {
+  max-height: 30em;
+}
