@@ -60,7 +60,9 @@ function init() {
   renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
+  // LIGNE A CHANGER
+  // document.body.appendChild(renderer.domElement);
+  document.querySelector(".header").appendChild(renderer.domElement);
 
   //
 
