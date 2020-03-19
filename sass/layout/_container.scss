@@ -1,11 +1,33 @@
 .main {
   position: absolute;
-  padding-top: 35em;
+  padding-top: 28em;
   width: 100%;
   //color: $primary-color;
-  &__title {
-    text-align: center;
+  &__section {
+    &__title {
+      text-align: center;
+    }
+    &__container {
+      padding-top: 2em;
+      background-color: black;
+      &__list {
+        text-align: center;
+        &__item {
+          color: white;
+          padding-bottom: 2em;
+          i {
+            font-size: 4em;
+          }
+        }
+      }
+    }
   }
+}
+
+.section-top {
+  background-color: black;
+  color: white;
+  border-top: 2px solid blue;
 }
 
 canvas {

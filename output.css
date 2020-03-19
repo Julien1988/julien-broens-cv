@@ -25,11 +25,31 @@
 
 .main {
   position: absolute;
-  padding-top: 35em;
+  padding-top: 28em;
   width: 100%;
 }
-.main__title {
+.main__section__title {
   text-align: center;
+}
+.main__section__container {
+  padding-top: 2em;
+  background-color: black;
+}
+.main__section__container__list {
+  text-align: center;
+}
+.main__section__container__list__item {
+  color: white;
+  padding-bottom: 2em;
+}
+.main__section__container__list__item i {
+  font-size: 4em;
+}
+
+.section-top {
+  background-color: black;
+  color: white;
+  border-top: 2px solid blue;
 }
 
 canvas {
