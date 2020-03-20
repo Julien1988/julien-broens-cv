@@ -4,22 +4,25 @@
   &__section {
     &__container {
       &__title {
+        border-top: 1px solid white;
+        margin-top: -0.1rem;
+        padding: 1em;
         text-align: center;
         position: relative;
 
         width: 100%;
       }
 
-      &__list {
-        text-align: center;
-        &__item {
-          color: white;
-          padding-bottom: 2em;
-          i {
-            font-size: 4em;
-          }
-        }
-      }
+      // &__list {
+      //   text-align: center;
+      //   &__item {
+      //     color: white;
+      //     padding-bottom: 2em;
+      //     i {
+      //       font-size: 4em;
+      //     }
+      //   }
+      // }
     }
   }
 }
@@ -34,6 +37,6 @@
 }
 
 canvas {
-  position: absolute;
+  //position: absolute;
   z-index: -1;
 }
