@@ -5,14 +5,17 @@
 
 .header {
   width: 100%;
+  background-image: url(images/banner-image-01.jpeg);
+  background-size: cover;
+  margin-bottom: -2.4em;
+  padding-bottom: 2.4em;
+  border-bottom: 1px solid white;
 }
-.header__title {
+.header__container__title {
   text-align: center;
-  color: black;
 }
-.header__subtitle {
+.header__container__subtitle {
   text-align: center;
-  color: black;
 }
 
 .my-menu {
@@ -25,9 +28,6 @@
 
 .main {
   width: 100%;
-}
-.main__section__container {
-  padding-top: 2em;
 }
 .main__section__container__title {
   text-align: center;

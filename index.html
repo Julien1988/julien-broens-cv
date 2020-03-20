@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="output.css.map" />
     <link rel="stylesheet" href="input.scss" />
 
+    <!-- TEST PARALLAX -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+
     <title>Document</title>
   </head>
   <body>
@@ -27,11 +33,14 @@
           </ul>
         </div>
       </nav>
-      <script type="module" src="app.js"></script>
-      <h1 class="header__title title-primary">
-        Julien Broens
-      </h1>
-      <h2 class="header__subtitle title-secondary">Développeur web</h2>
+      <div class="header__container">
+        <h1 class="header__container__title title-primary">
+          Julien Broens
+        </h1>
+        <h2 class="header__container__subtitle title-secondary">
+          Développeur web
+        </h2>
+      </div>
     </header>
     <main class="main">
       <section class="main__section section section-top">
@@ -102,5 +111,18 @@
       src="https://kit.fontawesome.com/640150b068.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="app.js"></script>
+
+    <!-- TEST PARALLAX -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".sidenav").sidenav();
+        $(".materialboxed").materialbox();
+        $(".parallax").parallax();
+      });
+    </script>
   </body>
 </html>
