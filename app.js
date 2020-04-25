@@ -5,11 +5,12 @@
   let skillsButton = document.getElementById("showMySkills");
   let getDomElementTitle = getDomElement.children[0];
   let getDomElementSubtitle = getDomElement.children[1];
-  let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s"];
+  let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s", " "];
   let count;
   let index;
 
   let skillsArrayIcones = [
+    "My Skills",
     "<i class='fab fa-php'></i>",
     "<i class='fab fa-css3-alt'></i>",
     "<i class='fab fa-html5'></i>",
@@ -23,7 +24,9 @@
     count = 0;
     getDomElementTitle.innerHTML = " ";
     getDomElementSubtitle.innerHTML = " ";
-    changeTitle(skillsArray);
+    //changeTitle(skillsArray);
+    skillsButton.remove();
+    showSkills();
   });
 
   // Génération d'un nombre aléatoire pour l'écriture du texte
@@ -36,10 +39,11 @@
     getDomElementTitle.innerHTML += skillsArray[count];
     count++;
     skillsButton.remove();
-    if (count < skillsArray.length) {
+    if (count <= skillsArray.length) {
       setTimeout(changeTitle, getRandomArbitrary(100, 300));
     } else {
       showSkills();
+      getDomElementTitle.remove();
     }
   }
 
@@ -54,8 +58,8 @@
 
     if (index < skillsArrayIcones.length - 1) {
       index++;
-
-      setTimeout(showSkills, 1000);
+      showSkills();
+      //   setTimeout(showSkills, 1000);
     }
   }
 })();

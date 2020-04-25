@@ -1,3 +1,18 @@
+@keyframes transition {
+  0% {
+    margin-left: -70px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+.main__section__container__list__item {
+  opacity: 0;
+  animation: transition 1s ease-in-out 2s forwards;
+}
+
 .title-primary,
 .title-secondary {
   color: white;
@@ -41,6 +56,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: initial;
 }
 .main__section__container__list__item {
   margin-bottom: 0.6em;
