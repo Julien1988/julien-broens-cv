@@ -1,149 +1,89 @@
-import * as THREE from "../build/three.module.js";
+(() => {
+  // Gestion de l'affichage des SKILLS via le click
 
-import Stats from "./jsm/libs/stats.module.js";
+  let getDomElement = document.querySelector(".main__section__container");
+  let skillsButton = document.getElementById("showMySkills");
+  let getDomElementTitle = getDomElement.children[0];
+  let getDomElementSubtitle = getDomElement.children[1];
+  let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s"];
+  let count;
 
-import { GUI } from "./jsm/libs/dat.gui.module.js";
-var camera, scene, renderer, stats, material;
-var mouseX = 0,
-  mouseY = 0;
+  let skillsArrayIcones = [
+    "<i class='fab fa-php'></i>",
+    "<i class='fab fa-css3-alt'></i>",
+    "<i class='fab fa-html5'></i>",
+    "<i class='fab fa-js'></i>",
+    "<i class='fab fa-sass'></i>",
+    "<i class='fab fa-wordpress'></i>",
+    "and more...",
+  ];
 
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
-
-init();
-animate();
-
-function init() {
-  camera = new THREE.PerspectiveCamera(
-    55,
-    window.innerWidth / window.innerHeight,
-    2,
-    2000
-  );
-  camera.position.z = 1000;
-
-  scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x000000, 0.001);
-
-  var geometry = new THREE.BufferGeometry();
-  var vertices = [];
-
-  var sprite = new THREE.TextureLoader().load("textures/sprites/disc.png");
-
-  for (var i = 0; i < 10000; i++) {
-    var x = 2000 * Math.random() - 1000;
-    var y = 2000 * Math.random() - 1000;
-    var z = 2000 * Math.random() - 1000;
-
-    vertices.push(x, y, z);
-  }
-
-  geometry.setAttribute(
-    "position",
-    new THREE.Float32BufferAttribute(vertices, 3)
-  );
-
-  material = new THREE.PointsMaterial({
-    size: 35,
-    sizeAttenuation: false,
-    map: sprite,
-    alphaTest: 0.5,
-    transparent: true
+  skillsButton.addEventListener("click", () => {
+    count = 0;
+    getDomElementTitle.innerHTML = " ";
+    getDomElementSubtitle.innerHTML = " ";
+    changeTitle(skillsArray);
+    showSkills();
   });
-  material.color.setHSL(1.0, 0.3, 0.7);
 
-  var particles = new THREE.Points(geometry, material);
-  scene.add(particles);
-
-  //
-
-  renderer = new THREE.WebGLRenderer();
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  // LIGNE A CHANGER
-  // document.body.appendChild(renderer.domElement);
-  document.querySelector(".section-top").appendChild(renderer.domElement);
-
-  //
-
-  // stats = new Stats();
-  // document.body.appendChild(stats.dom);
-
-  //
-
-  // var gui = new GUI();
-
-  // gui.add(material, "sizeAttenuation").onChange(function() {
-  //   material.needsUpdate = true;
-  // });
-
-  // gui.open();
-
-  //
-
-  document.addEventListener("mousemove", onDocumentMouseMove, false);
-  document.addEventListener("touchstart", onDocumentTouchStart, false);
-  document.addEventListener("touchmove", onDocumentTouchMove, false);
-
-  //
-
-  window.addEventListener("resize", onWindowResize, false);
-}
-
-function onWindowResize() {
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
-
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-function onDocumentMouseMove(event) {
-  mouseX = event.clientX - windowHalfX;
-  mouseY = event.clientY - windowHalfY;
-}
-
-function onDocumentTouchStart(event) {
-  if (event.touches.length == 1) {
-    event.preventDefault();
-
-    mouseX = event.touches[0].pageX - windowHalfX;
-    mouseY = event.touches[0].pageY - windowHalfY;
+  // Génération d'un nombre aléatoire pour l'écriture du texte
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
   }
-}
 
-function onDocumentTouchMove(event) {
-  if (event.touches.length == 1) {
-    event.preventDefault();
-
-    mouseX = event.touches[0].pageX - windowHalfX;
-    mouseY = event.touches[0].pageY - windowHalfY;
+  // Modifie le titre
+  function changeTitle() {
+    getDomElementTitle.innerHTML += skillsArray[count];
+    count++;
+    if (count < skillsArray.length) {
+      setTimeout(changeTitle, getRandomArbitrary(100, 300));
+    }
   }
+
+  // Affiche la liste des skills
+  function showSkills() {
+    skillsButton.remove();
+    let ul = getDomElement.appendChild(document.createElement("ul"));
+    ul.className = "main__section__container__list";
+
+    for (let i = 0; i < skillsArrayIcones.length; i++) {
+      let li = ul.appendChild(document.createElement("li"));
+      li.className = "main__section__container__list__item";
+      li.innerHTML = skillsArrayIcones[i];
+    }
+
+    // let li = ul.appendChild(document.createElement("li"));
+    // li.className = "main__section__container__list__item";
+  }
+})();
+
+{
+  /* <section class="main__section section section-top">
+<h1 class="main__section__title">My Skills</h1>
+<div class="main__section__container">
+  <ul class="main__section__container__list">
+    <li class="main__section__container__list__item">
+      <i class="fab fa-php"></i>
+    </li>
+    <li class="main__section__container__list__item">
+      <i class="fab fa-css3-alt"></i>
+    </li>
+    <li class="main__section__container__list__item">
+      <i class="fab fa-html5"></i>
+    </li>
+    <li class="main__section__container__list__item">
+      <i class="fab fa-js"></i>
+    </li>
+    <li class="main__section__container__list__item">
+      <i class="fab fa-sass"></i>
+    </li>
+    <li class="main__section__container__list__item">
+      <i class="fab fa-wordpress"></i>
+    </li>
+    <li class="main__section__container__list__item">
+      and more...
+    </li>
+  </ul>
+</div>
+</section> */
 }
-
-//
-
-function animate() {
-  requestAnimationFrame(animate);
-
-  render();
-  stats.update();
-}
-
-function render() {
-  var time = Date.now() * 0.00005;
-
-  camera.position.x += (mouseX - camera.position.x) * 0.05;
-  camera.position.y += (-mouseY - camera.position.y) * 0.05;
-
-  camera.lookAt(scene.position);
-
-  var h = ((360 * (1.0 + time)) % 360) / 360;
-  material.color.setHSL(h, 0.5, 0.5);
-
-  renderer.render(scene, camera);
-}
-
-// END OF CODE FOR THREE.JS
