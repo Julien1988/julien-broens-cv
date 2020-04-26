@@ -23,8 +23,10 @@
 
   skillsButton.addEventListener("click", () => {
     count = 0;
-    getDomElementTitle.innerHTML = " ";
-    getDomElementSubtitle.innerHTML = " ";
+    // getDomElementTitle.innerHTML = " ";
+    // getDomElementSubtitle.innerHTML = " ";
+    getDomElementTitle.remove();
+    getDomElementSubtitle.remove();
     //changeTitle(skillsArray);
     skillsButton.remove();
     showSkills();
@@ -69,18 +71,28 @@
       let lastLi = getLiList.length - 1;
       let getButton = getLiList[lastLi];
       getButton.className += " button-container";
-      console.log(getButton);
-      const result = await resolveAfter();
+      const result = await resolveAfterShowSkills();
     }
   }
 
   // Afficher mes informations
-  function resolveAfter() {
+  function resolveAfterShowSkills() {
     return new Promise((resolve) => {
       let showWhoIAmButton = document.querySelector("#showWhoIAm");
       showWhoIAmButton.addEventListener("click", () => {
-        console.log("coucou");
+        showWhoIAm();
       });
     });
+  }
+
+  function showWhoIAm() {
+    console.log("ici");
+    let ul = document.querySelector(".main__section__container__list");
+    let buttonContainer = document.querySelector(
+      ".main__section__container__button-containt"
+    );
+    console.log(ul);
+    ul.remove();
+    buttonContainer.remove();
   }
 })();
