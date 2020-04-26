@@ -18,6 +18,7 @@
     "<i class='fab fa-sass'></i>",
     "<i class='fab fa-wordpress'></i>",
     "and more...",
+    "<button class='main__section__container__list__item__button button-button-02' id='showWhoIAm'>Who I am</button>",
   ];
 
   skillsButton.addEventListener("click", () => {
@@ -49,6 +50,7 @@
 
   // Affiche la liste des skills
   index = 0;
+  11;
   let ul = getDomElement.appendChild(document.createElement("ul"));
   function showSkills() {
     let li = ul.appendChild(document.createElement("li"));
@@ -60,6 +62,23 @@
       index++;
       showSkills();
       //   setTimeout(showSkills, 1000);
+    } else {
+      let getLiList = document.querySelectorAll(
+        ".main__section__container__list__item"
+      );
+      let lastLi = getLiList.length - 1;
+      let getButton = getLiList[lastLi];
+      getButton.className += " button-container";
+      console.log(getButton);
     }
   }
+
+  // PROMISE
+
+  // Afficher mes informations
+
+  let showWhoIAmButton = document.querySelector("#showWhoIAm");
+  showWhoIAmButton.addEventListener("click", () => {
+    console.log("coucou");
+  });
 })();

@@ -1,9 +1,16 @@
 .button-container {
+  :hover {
+    transition-duration: 2s;
+    transform: translateX(1em);
+  }
   .button-button {
     padding: 1em 2.5em;
     background-color: transparentize($color: #ffffff, $amount: 1);
     color: white;
     font-size: 3em;
     font-weight: bold;
+  }
+  .button-button-02 {
+    background-color: white;
   }
 }
