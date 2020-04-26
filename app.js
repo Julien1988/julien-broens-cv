@@ -52,7 +52,7 @@
   index = 0;
   11;
   let ul = getDomElement.appendChild(document.createElement("ul"));
-  function showSkills() {
+  async function showSkills() {
     let li = ul.appendChild(document.createElement("li"));
     ul.className = "main__section__container__list";
     li.className = "main__section__container__list__item";
@@ -70,15 +70,17 @@
       let getButton = getLiList[lastLi];
       getButton.className += " button-container";
       console.log(getButton);
+      const result = await resolveAfter();
     }
   }
 
-  // PROMISE
-
   // Afficher mes informations
-
-  let showWhoIAmButton = document.querySelector("#showWhoIAm");
-  showWhoIAmButton.addEventListener("click", () => {
-    console.log("coucou");
-  });
+  function resolveAfter() {
+    return new Promise((resolve) => {
+      let showWhoIAmButton = document.querySelector("#showWhoIAm");
+      showWhoIAmButton.addEventListener("click", () => {
+        console.log("coucou");
+      });
+    });
+  }
 })();
