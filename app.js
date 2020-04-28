@@ -111,8 +111,13 @@
   async function whoIAmContent() {
     let creatDiv = getDomElement.appendChild(document.createElement("div"));
     creatDiv.className = "main__section__container__content-box";
+    // !
+    // !!
+    // !!! LISTE DES DIFFERENTES ETAPES PAR POINTS !!!
+    // !!
+    // !
+    // 0.1. Creéation dans lE DOM des différents éléments
 
-    // Creéation dans lE DOM des différents éléments
     let creatContent = creatDiv.appendChild(document.createElement("div"));
     creatContent.className = "main__section__container__content-box__window";
     let myNameContent = creatContent.appendChild(document.createElement("h1"));
@@ -137,6 +142,8 @@
     return new Promise((resolve) => {
       count = 0;
 
+      // 0.2. Modification des const en tableau
+
       myNameArray = myName.split("");
       myContactArray = myContact.split("");
       myLinkedinContactArray = myLinkedinContact.split("");
@@ -144,7 +151,8 @@
     });
   }
 
-  // Affiche les informations de whoIAmContent
+  // 0.3. Affiche les informations de whoIAmContent
+
   function writeTheTitle() {
     let getMyNameContent = document.querySelector(
       ".main__section__container__content-box__window__title"
@@ -155,29 +163,32 @@
     if (count < myNameArray.length) {
       setTimeout(writeTheTitle, getRandomArbitrary(100, 150));
     } else {
+      // 0.3.2 Création des compteurs individuels
+
       count = 0;
+      linkedinCount = 0;
+
+      // 0.4. Selection dans le DOM des emplacements à modifier
+
       let getMyContactContent = document.querySelector(
         ".main__section__container__content-box__window__sub-title"
       );
-      // TEST
-      let classSelectorEmail =
-        ".main__section__container__content-box__window__sub-title";
-      // TEST
-      let classSelectorLinkedin = ".sub-title-linkdin";
+
       let getMyLinkedinContactContent = document.querySelector(
         ".sub-title-linkdin"
       );
 
-      // Affichage de l'icone
+      // 0.5. Affichage de l'icone
+
       getMyContactContent.innerHTML = myMailIcone;
       getMyLinkedinContactContent.innerHTML = myLinkedinIcone;
-      linkedinCount = 0;
       writeTheContactInfo(myContactArray);
       writeTheContactInfoLinkedin(myContactArrayLinkedin);
     }
   }
 
-  //Ecriture des informations de contacte
+  //0.5. Ecriture des informations de contacte
+
   function writeTheContactInfo() {
     let getMyContactContent = document.querySelector(
       ".main__section__container__content-box__window__sub-title"
@@ -193,7 +204,8 @@
     }
   }
 
-  // Ecriture des informations de contacte
+  // 0.5. Ecriture des informations de contacte
+
   function writeTheContactInfoLinkedin() {
     let getMyContactContent = document.querySelector(".sub-title-linkdin");
 
