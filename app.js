@@ -6,21 +6,10 @@
   let getDomElementTitle = getDomElement.children[0];
   let getDomElementSubtitle = getDomElement.children[1];
   let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s", " "];
-  let myNameArray = [
-    "B",
-    "r",
-    "o",
-    "e",
-    "n",
-    "s",
-    " ",
-    "J",
-    "u",
-    "l",
-    "i",
-    "e",
-    "n",
-  ];
+
+  const myName = "Julien Broens - Web developeur";
+  let myNameArray;
+
   let count;
   let index;
 
@@ -126,6 +115,9 @@
   function resolveAfterWhoIAmContent() {
     return new Promise((resolve) => {
       count = 0;
+
+      myNameArray = myName.split("");
+
       writeTheTitle(myNameArray);
     });
   }
@@ -140,9 +132,7 @@
     skillsButton.remove();
     if (count < myNameArray.length) {
       setTimeout(writeTheTitle, getRandomArbitrary(100, 300));
-      console.log("ici");
     } else {
-      console.log("ELSE");
     }
   }
 })();
