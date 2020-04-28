@@ -20,7 +20,7 @@
 
   let count;
   let index;
-  let linkdinCount;
+  let linkedinCount;
 
   let skillsArrayIcones = [
     "My Skills",
@@ -159,6 +159,11 @@
       let getMyContactContent = document.querySelector(
         ".main__section__container__content-box__window__sub-title"
       );
+      // TEST
+      let classSelectorEmail =
+        ".main__section__container__content-box__window__sub-title";
+      // TEST
+      let classSelectorLinkedin = ".sub-title-linkdin";
       let getMyLinkedinContactContent = document.querySelector(
         ".sub-title-linkdin"
       );
@@ -166,13 +171,13 @@
       // Affichage de l'icone
       getMyContactContent.innerHTML = myMailIcone;
       getMyLinkedinContactContent.innerHTML = myLinkedinIcone;
-      linkdinCount = 0;
+      linkedinCount = 0;
       writeTheContactInfo(myContactArray);
-      writeTheContactInfoLinkdin(myContactArrayLinkedin);
+      writeTheContactInfoLinkedin(myContactArrayLinkedin);
     }
   }
 
-  // Ecriture des informations de contacte
+  //Ecriture des informations de contacte
   function writeTheContactInfo() {
     let getMyContactContent = document.querySelector(
       ".main__section__container__content-box__window__sub-title"
@@ -189,14 +194,14 @@
   }
 
   // Ecriture des informations de contacte
-  function writeTheContactInfoLinkdin() {
+  function writeTheContactInfoLinkedin() {
     let getMyContactContent = document.querySelector(".sub-title-linkdin");
 
-    getMyContactContent.innerHTML += myLinkedinContactArray[linkdinCount];
-    linkdinCount++;
+    getMyContactContent.innerHTML += myLinkedinContactArray[linkedinCount];
+    linkedinCount++;
 
-    if (linkdinCount < myLinkedinContactArray.length) {
-      setTimeout(writeTheContactInfoLinkdin, getRandomArbitrary(50, 100));
+    if (linkedinCount < myLinkedinContactArray.length) {
+      setTimeout(writeTheContactInfoLinkedin, getRandomArbitrary(50, 100));
     } else {
       console.log("Termine 2");
     }
