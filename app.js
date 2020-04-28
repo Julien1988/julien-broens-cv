@@ -6,6 +6,21 @@
   let getDomElementTitle = getDomElement.children[0];
   let getDomElementSubtitle = getDomElement.children[1];
   let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s", " "];
+  let myNameArray = [
+    "B",
+    "r",
+    "o",
+    "e",
+    "n",
+    "s",
+    " ",
+    "J",
+    "u",
+    "l",
+    "i",
+    "e",
+    "n",
+  ];
   let count;
   let index;
 
@@ -23,8 +38,7 @@
 
   skillsButton.addEventListener("click", () => {
     count = 0;
-    // getDomElementTitle.innerHTML = " ";
-    // getDomElementSubtitle.innerHTML = " ";
+
     getDomElementTitle.remove();
     getDomElementSubtitle.remove();
     //changeTitle(skillsArray);
@@ -86,13 +100,49 @@
   }
 
   function showWhoIAm() {
-    console.log("ici");
     let ul = document.querySelector(".main__section__container__list");
     let buttonContainer = document.querySelector(
       ".main__section__container__button-containt"
     );
-    console.log(ul);
+
     ul.remove();
     buttonContainer.remove();
+    whoIAmContent();
+  }
+
+  async function whoIAmContent() {
+    let creatDiv = getDomElement.appendChild(document.createElement("div"));
+    creatDiv.className = "main__section__container__content-box";
+
+    let creatContent = creatDiv.appendChild(document.createElement("div"));
+    creatContent.className = "main__section__container__content-box__window";
+    let myNameContent = creatContent.appendChild(document.createElement("h1"));
+    myNameContent.className =
+      "main__section__container__content-box__window__title";
+
+    const whoIAmContentResult = await resolveAfterWhoIAmContent();
+  }
+
+  function resolveAfterWhoIAmContent() {
+    return new Promise((resolve) => {
+      count = 0;
+      writeTheTitle(myNameArray);
+    });
+  }
+
+  // Affiche les informations de whoIAmContent
+  function writeTheTitle() {
+    let getMyNameContent = document.querySelector(
+      ".main__section__container__content-box__window__title"
+    );
+    getMyNameContent.innerHTML += myNameArray[count];
+    count++;
+    skillsButton.remove();
+    if (count < myNameArray.length) {
+      setTimeout(writeTheTitle, getRandomArbitrary(100, 300));
+      console.log("ici");
+    } else {
+      console.log("ELSE");
+    }
   }
 })();

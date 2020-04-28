@@ -23,6 +23,21 @@
           margin-bottom: 0.6em;
         }
       }
+      &__content-box {
+        display: grid;
+        grid-template-columns: repeat(22, 8em);
+        grid-template-rows: repeat(12, 6em);
+
+        &__window {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 1;
+          grid-row-end: 13;
+
+          background-color: white;
+          color: black;
+        }
+      }
     }
   }
 }
