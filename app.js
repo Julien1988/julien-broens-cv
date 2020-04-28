@@ -8,10 +8,19 @@
   let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s", " "];
 
   const myName = "Julien Broens - Web developeur";
+  const myContact = "julienbroens@gmail.com";
+  const myLinkedinContact =
+    "https://www.linkedin.com/in/julien-broens-24b465184";
+  const myMailIcone = "<i class='fas fa-envelope'></i>";
+  const myLinkedinIcone = "<i class='fab fa-linkedin'></i>";
   let myNameArray;
+  let myContactArray;
+  let myLinkedinContactArray;
+  let myContactArrayLinkedin;
 
   let count;
   let index;
+  let linkdinCount;
 
   let skillsArrayIcones = [
     "My Skills",
@@ -103,12 +112,24 @@
     let creatDiv = getDomElement.appendChild(document.createElement("div"));
     creatDiv.className = "main__section__container__content-box";
 
+    // Creéation dans lE DOM des différents éléments
     let creatContent = creatDiv.appendChild(document.createElement("div"));
     creatContent.className = "main__section__container__content-box__window";
     let myNameContent = creatContent.appendChild(document.createElement("h1"));
     myNameContent.className =
       "main__section__container__content-box__window__title";
-
+    let myContactContent = creatContent.appendChild(
+      document.createElement("a")
+    );
+    myContactContent.className =
+      "main__section__container__content-box__window__sub-title";
+    myContactContent.href = "mailto:" + myContact;
+    let myContactContentLinkdin = creatContent.appendChild(
+      document.createElement("a")
+    );
+    myContactContentLinkdin.href = myLinkedinContact;
+    myContactContentLinkdin.className =
+      "main__section__container__content-box__window__sub-title sub-title-linkdin";
     const whoIAmContentResult = await resolveAfterWhoIAmContent();
   }
 
@@ -117,7 +138,8 @@
       count = 0;
 
       myNameArray = myName.split("");
-
+      myContactArray = myContact.split("");
+      myLinkedinContactArray = myLinkedinContact.split("");
       writeTheTitle(myNameArray);
     });
   }
@@ -129,10 +151,54 @@
     );
     getMyNameContent.innerHTML += myNameArray[count];
     count++;
-    skillsButton.remove();
+
     if (count < myNameArray.length) {
-      setTimeout(writeTheTitle, getRandomArbitrary(100, 300));
+      setTimeout(writeTheTitle, getRandomArbitrary(100, 150));
     } else {
+      count = 0;
+      let getMyContactContent = document.querySelector(
+        ".main__section__container__content-box__window__sub-title"
+      );
+      let getMyLinkedinContactContent = document.querySelector(
+        ".sub-title-linkdin"
+      );
+
+      // Affichage de l'icone
+      getMyContactContent.innerHTML = myMailIcone;
+      getMyLinkedinContactContent.innerHTML = myLinkedinIcone;
+      linkdinCount = 0;
+      writeTheContactInfo(myContactArray);
+      writeTheContactInfoLinkdin(myContactArrayLinkedin);
+    }
+  }
+
+  // Ecriture des informations de contacte
+  function writeTheContactInfo() {
+    let getMyContactContent = document.querySelector(
+      ".main__section__container__content-box__window__sub-title"
+    );
+
+    getMyContactContent.innerHTML += myContactArray[count];
+    count++;
+
+    if (count < myContactArray.length) {
+      setTimeout(writeTheContactInfo, getRandomArbitrary(50, 100));
+    } else {
+      console.log("Termine");
+    }
+  }
+
+  // Ecriture des informations de contacte
+  function writeTheContactInfoLinkdin() {
+    let getMyContactContent = document.querySelector(".sub-title-linkdin");
+
+    getMyContactContent.innerHTML += myLinkedinContactArray[linkdinCount];
+    linkdinCount++;
+
+    if (linkdinCount < myLinkedinContactArray.length) {
+      setTimeout(writeTheContactInfoLinkdin, getRandomArbitrary(50, 100));
+    } else {
+      console.log("Termine 2");
     }
   }
 })();
