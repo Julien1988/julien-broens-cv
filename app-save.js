@@ -16,9 +16,11 @@
   let myNameArray;
   let myContactArray;
   let myLinkedinContactArray;
+  let myContactArrayLinkedin;
 
   let count;
   let index;
+  let linkedinCount;
 
   let skillsArrayIcones = [
     "My Skills",
@@ -143,7 +145,7 @@
       // 0.2. Modification des const en tableau
 
       myNameArray = myName.split("");
-
+      myContactArray = myContact.split("");
       myLinkedinContactArray = myLinkedinContact.split("");
       writeTheTitle(myNameArray);
     });
@@ -161,54 +163,59 @@
     if (count < myNameArray.length) {
       setTimeout(writeTheTitle, getRandomArbitrary(100, 150));
     } else {
-      // EMAIL
-      // 0.3.3 Selection de la constante
-      myContactArray = myContact.split("");
+      // 0.3.2 Création des compteurs individuels
+
+      count = 0;
+      linkedinCount = 0;
+
       // 0.4. Selection dans le DOM des emplacements à modifier
 
       let getMyContactContent = document.querySelector(
         ".main__section__container__content-box__window__sub-title"
       );
 
-      // 0.5. Affichage de l'icone
-
-      getMyContactContent.innerHTML = myMailIcone;
-
-      // LINKEDIN
-      // 0.3.3 Selection de la constante
-      myLinkedinContactArray = myLinkedinContact.split("");
-      // 0.4. Selection dans le DOM des emplacements à modifier
       let getMyLinkedinContactContent = document.querySelector(
         ".sub-title-linkdin"
       );
+
       // 0.5. Affichage de l'icone
+
+      getMyContactContent.innerHTML = myMailIcone;
       getMyLinkedinContactContent.innerHTML = myLinkedinIcone;
-      console.log(myLinkedinIcone);
+      writeTheContactInfo(myContactArray);
+      writeTheContactInfoLinkedin(myContactArrayLinkedin);
+    }
+  }
 
-      // LANCEMENT DE LA FONCTION
+  //0.5. Ecriture des informations de contacte
 
-      writeTheContactInfo(myContactArray, getMyContactContent);
-      writeTheContactInfo(myLinkedinContactArray, getMyLinkedinContactContent);
+  function writeTheContactInfo() {
+    let getMyContactContent = document.querySelector(
+      ".main__section__container__content-box__window__sub-title"
+    );
 
-      //0.5. Ecriture des informations de contacte
+    getMyContactContent.innerHTML += myContactArray[count];
+    count++;
 
-      function writeTheContactInfo(myContactArray, getMyContactContent) {
-        var writeTheContactInfoCount = 0;
-        dynamicText();
-        function dynamicText() {
-          writeTheContactInfoCount++;
-          console.log(writeTheContactInfoCount);
+    if (count < myContactArray.length) {
+      setTimeout(writeTheContactInfo, getRandomArbitrary(50, 100));
+    } else {
+      console.log("Termine");
+    }
+  }
 
-          getMyContactContent.innerHTML +=
-            myContactArray[writeTheContactInfoCount];
+  // 0.5. Ecriture des informations de contacte
 
-          if (writeTheContactInfoCount < myContactArray.length - 1) {
-            setTimeout(dynamicText, getRandomArbitrary(50, 100));
-          } else {
-            console.log("Termine");
-          }
-        }
-      }
+  function writeTheContactInfoLinkedin() {
+    let getMyContactContent = document.querySelector(".sub-title-linkdin");
+
+    getMyContactContent.innerHTML += myLinkedinContactArray[linkedinCount];
+    linkedinCount++;
+
+    if (linkedinCount < myLinkedinContactArray.length) {
+      setTimeout(writeTheContactInfoLinkedin, getRandomArbitrary(50, 100));
+    } else {
+      console.log("Termine 2");
     }
   }
 })();
