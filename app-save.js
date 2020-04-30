@@ -187,7 +187,7 @@
     }
   }
 
-  //0.5. Ecriture des informations de contacte
+  //0.5. Ecriture des informations de contact
 
   function writeTheContactInfo() {
     let getMyContactContent = document.querySelector(
@@ -204,7 +204,7 @@
     }
   }
 
-  // 0.5. Ecriture des informations de contacte
+  // 0.5. Ecriture des informations de contact
 
   function writeTheContactInfoLinkedin() {
     let getMyContactContent = document.querySelector(".sub-title-linkdin");

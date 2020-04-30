@@ -8,14 +8,22 @@
   let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s", " "];
 
   const myName = "Julien Broens - Web developeur";
+  // Texte à afficher
   const myContact = "julienbroens@gmail.com";
   const myLinkedinContact =
     "https://www.linkedin.com/in/julien-broens-24b465184";
+  const myAdress = "Tienne Jean-Pierre, 35 5150 FLOREFFE";
+
+  //  Icone à afficher
   const myMailIcone = "<i class='fas fa-envelope'></i>";
   const myLinkedinIcone = "<i class='fab fa-linkedin'></i>";
+  const myAdressIcone = "<i class='fas fa-globe'></i>";
+
+  // Variable de stockage des infirmation pour la convertion des constantes en tableau
   let myNameArray;
   let myContactArray;
   let myLinkedinContactArray;
+  let myAdressArray;
 
   let count;
   let index;
@@ -114,25 +122,38 @@
     // !!! LISTE DES DIFFERENTES ETAPES PAR POINTS !!!
     // !!
     // !
-    // 0.1. Creéation dans lE DOM des différents éléments
+    // 0.1. Création dans lE DOM des différents éléments
 
     let creatContent = creatDiv.appendChild(document.createElement("div"));
+    // Ecriture du titre
     creatContent.className = "main__section__container__content-box__window";
     let myNameContent = creatContent.appendChild(document.createElement("h1"));
     myNameContent.className =
       "main__section__container__content-box__window__title";
+    // Ecriture de l'adresse email
     let myContactContent = creatContent.appendChild(
       document.createElement("a")
     );
     myContactContent.className =
       "main__section__container__content-box__window__sub-title";
     myContactContent.href = "mailto:" + myContact;
+    // Ecriture de l'adresse linkedin
     let myContactContentLinkdin = creatContent.appendChild(
       document.createElement("a")
     );
     myContactContentLinkdin.href = myLinkedinContact;
     myContactContentLinkdin.className =
       "main__section__container__content-box__window__sub-title sub-title-linkdin";
+
+    // Ecriture de l'adresse postale
+    let myContactContentPostAdress = creatContent.appendChild(
+      document.createElement("a")
+    );
+    myContactContentPostAdress.href = myAdress;
+    myContactContentPostAdress.className =
+      "main__section__container__content-box__window__sub-title sub-title-adress";
+
+    // LANCEMENT DE LA FONCTION ASYNCHRONE - SUITE
     const whoIAmContentResult = await resolveAfterWhoIAmContent();
   }
 
@@ -184,12 +205,23 @@
       // 0.5. Affichage de l'icone
       getMyLinkedinContactContent.innerHTML = myLinkedinIcone;
 
+      // ADRESS
+      // 0.3.3 Selection de la constante
+      myAdressArray = myAdress.split("");
+      // 0.4. Selection dans le DOM des emplacements à modifier
+      let getMyAdressContactContent = document.querySelector(
+        ".sub-title-adress"
+      );
+      // 0.5. Affichage de l'icone
+      getMyAdressContactContent.innerHTML = myAdressIcone;
+
       // LANCEMENT DE LA FONCTION
 
       writeTheContactInfo(myContactArray, getMyContactContent);
       writeTheContactInfo(myLinkedinContactArray, getMyLinkedinContactContent);
+      writeTheContactInfo(myAdressArray, getMyAdressContactContent);
 
-      //0.5. Ecriture des informations de contacte
+      //0.5. Ecriture des informations de contact
 
       function writeTheContactInfo(myContactArray, getMyContactContent) {
         var writeTheContactInfoCount = 0;
