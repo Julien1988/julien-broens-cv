@@ -14,11 +14,16 @@
     "https://www.linkedin.com/in/julien-broens-24b465184";
   const myAdress = "Tienne Jean-Pierre, 35 5150 FLOREFFE";
   const myExperienceTitle = "Experience :";
+  const myBioTitle = "Biography";
+  const myBioText =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsum, amet repudiandae est eius fuga veniam iste saepe consequuntur velit.";
 
   //  Icone à afficher
   const myMailIcone = "<i class='fas fa-envelope'></i>";
   const myLinkedinIcone = "<i class='fab fa-linkedin'></i>";
   const myAdressIcone = "<i class='fas fa-globe'></i>";
+
+  // Tableau d'expérience
   const myExperienceListItem = [
     "O'clock : 2018 - 2019",
     "BeCode : 2019 - 2020",
@@ -30,6 +35,8 @@
   let myLinkedinContactArray;
   let myAdressArray;
   let myExperienceTitleArray;
+  let myBioTitleArray;
+  let myBioTextArray;
 
   let count;
   let index;
@@ -183,6 +190,21 @@
       myExperienceListe.appendChild(document.createElement("li"));
     });
 
+    // TODO
+    // Ecriture de la bio - Titre
+
+    let myBio = creatContent.appendChild(document.createElement("h2"));
+
+    myBio.className =
+      "main__section__container__content-box__window__sub-title sub-title-bio";
+
+    // Ecriture de la bio - TEXT
+
+    let myBioText = creatContent.appendChild(document.createElement("p"));
+
+    myBioText.className =
+      "main__section__container__content-box__window__sub-title sub-title-bio-text";
+
     // LANCEMENT DE LA FONCTION ASYNCHRONE - SUITE
     const whoIAmContentResult = await resolveAfterWhoIAmContent();
   }
@@ -255,6 +277,22 @@
       // 0.5. Affichage de l'icone
       // - pas d'icone -
 
+      // BIO - TITRE
+      // 0.3.3 Selection de la constante
+      myBioTitleArray = myBioTitle.split("");
+      // 0.4. Selection dans le DOM des emplacements à modifier
+      let getMyBioContent = document.querySelector(".sub-title-bio");
+      // 0.5. Affichage de l'icone
+      // - pas d'icone -
+
+      // BIO - TEXT
+      // 0.3.3 Selection de la constante
+      myBioTextArray = myBioText.split("");
+      // 0.4. Selection dans le DOM des emplacements à modifier
+      let getMyBioTextContent = document.querySelector(".sub-title-bio-text");
+      // 0.5. Affichage de l'icone
+      // - pas d'icone -
+
       // LANCEMENT DE LA FONCTION
 
       writeTheContactInfo(myContactArray, getMyContactContent);
@@ -264,6 +302,8 @@
         myExperienceTitleArray,
         getMyExperienceContactContent
       );
+      writeTheContactInfo(myBioTitleArray, getMyBioContent);
+      writeTheContactInfo(myBioTextArray, getMyBioTextContent);
 
       // Nomage des classes de la liste
       let getLiListItem = document.querySelectorAll("li");
@@ -281,7 +321,7 @@
           writeTheContactInfoCount++;
 
           if (writeTheContactInfoCount < myContactArray.length) {
-            setTimeout(dynamicText, getRandomArbitrary(50, 100));
+            setTimeout(dynamicText, getRandomArbitrary(20, 50));
           } else {
             console.log("Termine");
           }
