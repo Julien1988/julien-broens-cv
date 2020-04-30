@@ -81,6 +81,14 @@
   background-color: white;
   color: black;
   padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+.main__section__container__content-box__window a {
+  font-size: 2em;
+}
+.main__section__container__content-box__window a i {
+  margin-right: 1em;
 }
 
 .section-top {

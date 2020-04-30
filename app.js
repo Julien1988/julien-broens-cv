@@ -183,7 +183,6 @@
       );
       // 0.5. Affichage de l'icone
       getMyLinkedinContactContent.innerHTML = myLinkedinIcone;
-      console.log(myLinkedinIcone);
 
       // LANCEMENT DE LA FONCTION
 
@@ -196,13 +195,11 @@
         var writeTheContactInfoCount = 0;
         dynamicText();
         function dynamicText() {
-          writeTheContactInfoCount++;
-          console.log(writeTheContactInfoCount);
-
           getMyContactContent.innerHTML +=
             myContactArray[writeTheContactInfoCount];
+          writeTheContactInfoCount++;
 
-          if (writeTheContactInfoCount < myContactArray.length - 1) {
+          if (writeTheContactInfoCount < myContactArray.length) {
             setTimeout(dynamicText, getRandomArbitrary(50, 100));
           } else {
             console.log("Termine");
