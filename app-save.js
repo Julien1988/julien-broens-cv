@@ -31,7 +31,7 @@
 
   let count;
   let index;
-  let listItemCount;
+
   let skillsArrayIcones = [
     "My Skills",
     "<i class='fab fa-php'></i>",
@@ -176,15 +176,12 @@
 
     // Ecriture de l'expérience - LISTE LI
     //DEBUT
-    let myExperienceListItemLenght = myExperienceListItem.length;
-    listItemCount = 0;
-    myExperienceListItem.forEach((element) => {
-      console.log(element);
-      myExperienceListe.appendChild(document.createElement("li"));
-    });
+    let myExperienceListeItem = myExperienceListe.appendChild(
+      document.createElement("li")
+    );
 
-    // myExperienceListeItem.className =
-    //   "main__section__container__content-box__window__sub-title sub-title-experience-liste-item";
+    myExperienceListeItem.className =
+      "main__section__container__content-box__window__sub-title sub-title-experience-liste-item";
 
     //FIN
 
@@ -261,7 +258,7 @@
       // - pas d'icone -
 
       // EXPERIENCE - LISTE - ITEMS
-      // console.log(myExperienceListItem);
+      console.log(myExperienceListItem);
 
       // LANCEMENT DE LA FONCTION
 
@@ -272,11 +269,6 @@
         myExperienceTitleArray,
         getMyExperienceContactContent
       );
-
-      // Nomage des classes de la liste
-      let getLiListItem = document.querySelectorAll("li");
-      let myExperienceListItemArray;
-      writeTheListItem();
       // writeTheContactInfo(
       //   myExperienceListItemArray,
       //   getMyExperienceListItemContent
@@ -298,22 +290,6 @@
             console.log("Termine");
           }
         }
-      }
-      function writeTheListItem() {
-        getLiListItem.forEach((element) => {
-          element.className =
-            "main__section__container__content-box__window__sub-title sub-title-experience-liste-item";
-          myExperienceListItemArray = myExperienceListItem[listItemCount].split(
-            ""
-          );
-          let getTheListItem = getLiListItem[listItemCount];
-          console.log(myExperienceListItemArray);
-          console.log(getTheListItem);
-
-          writeTheContactInfo(myExperienceListItemArray, getTheListItem);
-
-          listItemCount++;
-        });
       }
     }
   }
