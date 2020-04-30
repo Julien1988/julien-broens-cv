@@ -8,6 +8,10 @@
       justify-content: center;
       height: 100%;
 
+      &__subtitle {
+        text-transform: uppercase;
+      }
+
       &__button-containt {
         margin-top: 5em;
       }

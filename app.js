@@ -7,23 +7,27 @@
   let getDomElementSubtitle = getDomElement.children[1];
   let skillsArray = ["M", "y", " ", "S", "k", "i", "l", "l", "s", " "];
 
-  const myName = "Julien Broens - Web developeur";
+  const myName = "Julien Broens - Web developer";
   // Texte à afficher
   const myContact = "julienbroens@gmail.com";
   const myLinkedinContact =
     "https://www.linkedin.com/in/julien-broens-24b465184";
   const myAdress = "Tienne Jean-Pierre, 35 5150 FLOREFFE";
+  const myExperienceTitle = "Experience :";
 
   //  Icone à afficher
   const myMailIcone = "<i class='fas fa-envelope'></i>";
   const myLinkedinIcone = "<i class='fab fa-linkedin'></i>";
   const myAdressIcone = "<i class='fas fa-globe'></i>";
+  const myExperienceListItem = "O'clock : 2018 - 2019";
 
   // Variable de stockage des infirmation pour la convertion des constantes en tableau
   let myNameArray;
   let myContactArray;
   let myLinkedinContactArray;
   let myAdressArray;
+  let myExperienceTitleArray;
+  let myExperienceListItemArray;
 
   let count;
   let index;
@@ -137,6 +141,7 @@
     myContactContent.className =
       "main__section__container__content-box__window__sub-title";
     myContactContent.href = "mailto:" + myContact;
+
     // Ecriture de l'adresse linkedin
     let myContactContentLinkdin = creatContent.appendChild(
       document.createElement("a")
@@ -152,6 +157,31 @@
     myContactContentPostAdress.href = myAdress;
     myContactContentPostAdress.className =
       "main__section__container__content-box__window__sub-title sub-title-adress";
+
+    // Ecriture de l'expérience - Titre
+
+    let myExperience = creatContent.appendChild(document.createElement("h2"));
+
+    myExperience.className =
+      "main__section__container__content-box__window__sub-title sub-title-experience";
+
+    // Ecriture de l'expérience - LISTE UL
+
+    let myExperienceListe = creatContent.appendChild(
+      document.createElement("ul")
+    );
+
+    myExperienceListe.className =
+      "main__section__container__content-box__window__sub-title sub-title-experience-liste";
+
+    // Ecriture de l'expérience - LISTE LI
+
+    let myExperienceListeItem = myExperienceListe.appendChild(
+      document.createElement("li")
+    );
+
+    myExperienceListeItem.className =
+      "main__section__container__content-box__window__sub-title sub-title-experience-liste-item";
 
     // LANCEMENT DE LA FONCTION ASYNCHRONE - SUITE
     const whoIAmContentResult = await resolveAfterWhoIAmContent();
@@ -180,7 +210,7 @@
     count++;
 
     if (count < myNameArray.length) {
-      setTimeout(writeTheTitle, getRandomArbitrary(100, 150));
+      setTimeout(writeTheTitle, getRandomArbitrary(50, 100));
     } else {
       // EMAIL
       // 0.3.3 Selection de la constante
@@ -215,11 +245,39 @@
       // 0.5. Affichage de l'icone
       getMyAdressContactContent.innerHTML = myAdressIcone;
 
+      // EXPERIENCE - TITRE
+      // 0.3.3 Selection de la constante
+      myExperienceTitleArray = myExperienceTitle.split("");
+      // 0.4. Selection dans le DOM des emplacements à modifier
+      let getMyExperienceContactContent = document.querySelector(
+        ".sub-title-experience"
+      );
+      // 0.5. Affichage de l'icone
+      // - pas d'icone -
+
+      // EXPERIENCE - LISTE - ITEMS
+      // 0.3.3 Selection de la constante
+      myExperienceListItemArray = myExperienceListItem.split("");
+      // 0.4. Selection dans le DOM des emplacements à modifier
+      let getMyExperienceListItemContent = document.querySelector(
+        ".sub-title-experience-liste-item"
+      );
+      // 0.5. Affichage de l'icone
+      // - pas d'icone -
+
       // LANCEMENT DE LA FONCTION
 
       writeTheContactInfo(myContactArray, getMyContactContent);
       writeTheContactInfo(myLinkedinContactArray, getMyLinkedinContactContent);
       writeTheContactInfo(myAdressArray, getMyAdressContactContent);
+      writeTheContactInfo(
+        myExperienceTitleArray,
+        getMyExperienceContactContent
+      );
+      writeTheContactInfo(
+        myExperienceListItemArray,
+        getMyExperienceListItemContent
+      );
 
       //0.5. Ecriture des informations de contact
 

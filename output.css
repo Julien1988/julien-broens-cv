@@ -55,6 +55,9 @@
   justify-content: center;
   height: 100%;
 }
+.main__section__container__subtitle {
+  text-transform: uppercase;
+}
 .main__section__container__button-containt {
   margin-top: 5em;
 }
