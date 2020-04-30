@@ -19,7 +19,10 @@
   const myMailIcone = "<i class='fas fa-envelope'></i>";
   const myLinkedinIcone = "<i class='fab fa-linkedin'></i>";
   const myAdressIcone = "<i class='fas fa-globe'></i>";
-  const myExperienceListItem = ["O'clock : 2018 - 2019", "BeCode"];
+  const myExperienceListItem = [
+    "O'clock : 2018 - 2019",
+    "BeCode : 2019 - 2020",
+  ];
 
   // Variable de stockage des infirmation pour la convertion des constantes en tableau
   let myNameArray;
@@ -27,7 +30,6 @@
   let myLinkedinContactArray;
   let myAdressArray;
   let myExperienceTitleArray;
-  let myExperienceListItemArray;
 
   let count;
   let index;
@@ -175,18 +177,11 @@
       "main__section__container__content-box__window__sub-title sub-title-experience-liste";
 
     // Ecriture de l'expérience - LISTE LI
-    //DEBUT
-    let myExperienceListItemLenght = myExperienceListItem.length;
+
     listItemCount = 0;
     myExperienceListItem.forEach((element) => {
-      console.log(element);
       myExperienceListe.appendChild(document.createElement("li"));
     });
-
-    // myExperienceListeItem.className =
-    //   "main__section__container__content-box__window__sub-title sub-title-experience-liste-item";
-
-    //FIN
 
     // LANCEMENT DE LA FONCTION ASYNCHRONE - SUITE
     const whoIAmContentResult = await resolveAfterWhoIAmContent();
@@ -260,9 +255,6 @@
       // 0.5. Affichage de l'icone
       // - pas d'icone -
 
-      // EXPERIENCE - LISTE - ITEMS
-      // console.log(myExperienceListItem);
-
       // LANCEMENT DE LA FONCTION
 
       writeTheContactInfo(myContactArray, getMyContactContent);
@@ -277,10 +269,6 @@
       let getLiListItem = document.querySelectorAll("li");
       let myExperienceListItemArray;
       writeTheListItem();
-      // writeTheContactInfo(
-      //   myExperienceListItemArray,
-      //   getMyExperienceListItemContent
-      // );
 
       //0.5. Ecriture des informations de contact
 
@@ -299,6 +287,8 @@
           }
         }
       }
+
+      // Affichage des objets dans le tableau
       function writeTheListItem() {
         getLiListItem.forEach((element) => {
           element.className =
@@ -307,8 +297,6 @@
             ""
           );
           let getTheListItem = getLiListItem[listItemCount];
-          console.log(myExperienceListItemArray);
-          console.log(getTheListItem);
 
           writeTheContactInfo(myExperienceListItemArray, getTheListItem);
 

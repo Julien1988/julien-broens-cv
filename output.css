@@ -89,9 +89,16 @@
 }
 .main__section__container__content-box__window a {
   font-size: 2em;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
 }
 .main__section__container__content-box__window a i {
   margin-right: 1em;
+}
+.main__section__container__content-box__window ul li {
+  font-size: 2em;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
 }
 
 .section-top {

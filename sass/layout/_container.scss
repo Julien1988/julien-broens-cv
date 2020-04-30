@@ -47,9 +47,19 @@
 
           a {
             font-size: 2em;
+            margin-bottom: 1em;
+            margin-left: 0.5em;
 
             i {
               margin-right: 1em;
+            }
+          }
+
+          ul {
+            li {
+              font-size: 2em;
+              margin-left: 0.5em;
+              margin-bottom: 1em;
             }
           }
         }
