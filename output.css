@@ -147,7 +147,7 @@ canvas {
     padding: 0.5em;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .main__section__container {
     text-align: center;
   }
