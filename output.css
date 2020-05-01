@@ -175,11 +175,10 @@ canvas {
     text-align: left !important;
   }
   body .main__section__container__list {
-    font-size: 4em;
-    color: red;
+    font-size: 3em !important;
   }
   body .main__section__container__content-box {
-    font-size: 1em;
+    font-size: 1em !important;
     display: grid;
     grid-template-columns: repeat(22, 8em);
     grid-template-rows: repeat(12, 6em);

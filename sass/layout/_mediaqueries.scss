@@ -87,12 +87,11 @@
           text-align: left !important;
 
           &__list {
-            font-size: 4em;
-            color: red;
+            font-size: 3em !important;
           }
 
           &__content-box {
-            font-size: 1em;
+            font-size: 1em !important;
             display: grid;
             grid-template-columns: repeat(22, 8em);
             grid-template-rows: repeat(12, 6em);
