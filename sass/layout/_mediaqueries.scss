@@ -6,7 +6,7 @@
         text-align: center;
 
         &__list {
-          font-size: 2.5em;
+          font-size: 2.5em !important;
         }
 
         &__content-box {
@@ -15,13 +15,13 @@
 
           &__window {
             &__title {
-              padding-top: 2em;
+              padding-top: 2em !important;
             }
             display: flex;
-            margin-top: 2em;
+            margin-top: 2em !important;
 
             a {
-              font-size: 2em;
+              font-size: 2em !important;
 
               align-items: flex-start;
             }
@@ -39,39 +39,41 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
-  .main {
-    &__section {
-      &__container {
-        text-align: center;
+@media (max-width: 769px) {
+  body {
+    .main {
+      &__section {
+        &__container {
+          text-align: center;
 
-        &__list {
-          font-size: 3.5em;
-        }
+          &__list {
+            font-size: 3.5em;
+          }
 
-        &__content-box {
-          font-size: 0.5em;
-          display: block;
+          &__content-box {
+            font-size: 0.5em;
+            display: block;
 
-          &__window {
-            &__title {
-            }
-            display: flex;
-            margin-top: 2em;
+            &__window {
+              &__title {
+                display: flex;
+                margin-top: 2em;
+              }
 
-            a {
-              font-size: 2em;
+              a {
+                font-size: 2em;
 
-              align-items: flex-start;
+                align-items: flex-start;
+              }
             }
           }
         }
       }
-    }
 
-    .button-container {
-      button {
-        padding: 0.5em;
+      .button-container {
+        button {
+          padding: 0.5em;
+        }
       }
     }
   }
