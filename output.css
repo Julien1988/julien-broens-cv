@@ -147,7 +147,7 @@ canvas {
     padding: 0.5em;
   }
 }
-@media (max-width: 991px) {
+@media (min-width: 768px) {
   body .main__section__container {
     text-align: center;
   }
@@ -176,6 +176,7 @@ canvas {
   }
   body .main__section__container__list {
     font-size: 4em;
+    color: red;
   }
   body .main__section__container__content-box {
     font-size: 1em;
@@ -188,14 +189,6 @@ canvas {
     grid-column-end: 23;
     grid-row-start: 1;
     grid-row-end: 13;
-  }
-  body .main__section__container__content-box__window__title {
-    display: flex;
-    margin-top: 2em;
-  }
-  body .main__section__container__content-box__window a {
-    font-size: 2em;
-    align-items: flex-start;
   }
   body .main .button-container button {
     padding: 0.5em;

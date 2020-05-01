@@ -39,7 +39,7 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 991px) {
+@media (min-width: 768px) {
   body {
     .main {
       &__section {
@@ -88,6 +88,7 @@
 
           &__list {
             font-size: 4em;
+            color: red;
           }
 
           &__content-box {
@@ -102,14 +103,14 @@
               grid-row-start: 1;
               grid-row-end: 13;
               &__title {
-                display: flex;
-                margin-top: 2em;
+                // display: flex;
+                // margin-top: 2em;
               }
 
               a {
-                font-size: 2em;
+                // font-size: 2em;
 
-                align-items: flex-start;
+                // align-items: flex-start;
               }
             }
           }
