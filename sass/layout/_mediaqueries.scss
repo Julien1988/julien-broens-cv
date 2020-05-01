@@ -1,12 +1,12 @@
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .main {
     &__section {
       &__container {
         text-align: center;
 
         &__list {
-          font-size: 2.5em !important;
+          font-size: 2em !important;
         }
 
         &__content-box {
@@ -39,7 +39,7 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   body {
     .main {
       &__section {
@@ -47,7 +47,7 @@
           text-align: center;
 
           &__list {
-            font-size: 3.5em;
+            font-size: 3em;
           }
 
           &__content-box {
@@ -55,6 +55,52 @@
             display: block;
 
             &__window {
+              &__title {
+                display: flex;
+                margin-top: 2em;
+              }
+
+              a {
+                font-size: 2em;
+
+                align-items: flex-start;
+              }
+            }
+          }
+        }
+      }
+
+      .button-container {
+        button {
+          padding: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    .main {
+      &__section {
+        &__container {
+          text-align: left !important;
+
+          &__list {
+            font-size: 4em;
+          }
+
+          &__content-box {
+            font-size: 1em;
+            display: grid;
+            grid-template-columns: repeat(22, 8em);
+            grid-template-rows: repeat(12, 6em);
+
+            &__window {
+              grid-column-start: 1;
+              grid-column-end: 23;
+              grid-row-start: 1;
+              grid-row-end: 13;
               &__title {
                 display: flex;
                 margin-top: 2em;
