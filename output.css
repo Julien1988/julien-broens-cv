@@ -170,28 +170,5 @@ canvas {
     padding: 0.5em;
   }
 }
-@media (min-width: 992px) {
-  body .main__section__container {
-    text-align: left !important;
-  }
-  body .main__section__container__list {
-    font-size: 3em !important;
-  }
-  body .main__section__container__content-box {
-    font-size: 1em !important;
-    display: grid;
-    grid-template-columns: repeat(22, 8em);
-    grid-template-rows: repeat(12, 6em);
-  }
-  body .main__section__container__content-box__window {
-    grid-column-start: 1;
-    grid-column-end: 23;
-    grid-row-start: 1;
-    grid-row-end: 13;
-  }
-  body .main .button-container button {
-    padding: 0.5em;
-  }
-}
 
 /*# sourceMappingURL=output.css.map */
