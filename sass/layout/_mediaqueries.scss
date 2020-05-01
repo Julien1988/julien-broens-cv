@@ -1,5 +1,5 @@
 // Small devices (landscape phones, 576px and up)
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .main {
     &__section {
       &__container {
@@ -39,7 +39,7 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   body {
     .main {
       &__section {

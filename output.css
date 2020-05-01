@@ -121,7 +121,7 @@ canvas {
   z-index: -1;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .main__section__container {
     text-align: center;
   }
@@ -147,7 +147,7 @@ canvas {
     padding: 0.5em;
   }
 }
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   body .main__section__container {
     text-align: center;
   }
