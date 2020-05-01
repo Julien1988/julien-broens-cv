@@ -23,7 +23,6 @@
   const myMailIcone = "<i class='fas fa-envelope'></i>";
   const myLinkedinIcone = "<i class='fab fa-linkedin'></i>";
   const myAdressIcone = "<i class='fas fa-globe'></i>";
-  const myPhoneIcone = "<i class='fas fa-phone-square-alt'></i>";
 
   // Tableau d'expérience
   const myExperienceListItem = [
@@ -170,14 +169,6 @@
     myContactContentPostAdress.className =
       "main__section__container__content-box__window__sub-title sub-title-adress";
 
-    // Ecriture du numéro de téléphone
-    let myContactContentPhoneNumber = creatContent.appendChild(
-      document.createElement("a")
-    );
-    myContactContentPhoneNumber.href = myPhone;
-    myContactContentPhoneNumber.className =
-      "main__section__container__content-box__window__sub-title sub-title-phone";
-
     // Ecriture de l'expérience - Titre
 
     let myExperience = creatContent.appendChild(document.createElement("h2"));
@@ -278,14 +269,6 @@
       // 0.5. Affichage de l'icone
       getMyAdressContactContent.innerHTML = myAdressIcone;
 
-      // PHONE
-      // 0.3.3 Selection de la constante
-      myPhoneArray = myPhone.split("");
-      // 0.4. Selection dans le DOM des emplacements à modifier
-      let getMyPhoneContactContent = document.querySelector(".sub-title-phone");
-      // 0.5. Affichage de l'icone
-      getMyPhoneContactContent.innerHTML = myPhoneIcone;
-
       // EXPERIENCE - TITRE
       // 0.3.3 Selection de la constante
       myExperienceTitleArray = myExperienceTitle.split("");
@@ -317,7 +300,6 @@
       writeTheContactInfo(myContactArray, getMyContactContent);
       writeTheContactInfo(myLinkedinContactArray, getMyLinkedinContactContent);
       writeTheContactInfo(myAdressArray, getMyAdressContactContent);
-      writeTheContactInfo(myPhoneArray, getMyPhoneContactContent);
       writeTheContactInfo(
         myExperienceTitleArray,
         getMyExperienceContactContent

@@ -8,6 +8,10 @@
       justify-content: center;
       height: 100%;
 
+      &__subtitle {
+        text-transform: uppercase;
+      }
+
       &__button-containt {
         margin-top: 5em;
       }
@@ -17,9 +21,56 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: initial;
 
         &__item {
           margin-bottom: 0.6em;
+        }
+      }
+      &__content-box {
+        display: grid;
+        grid-template-columns: repeat(22, 8em);
+        grid-template-rows: repeat(12, 6em);
+
+        &__window {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 1;
+          grid-row-end: 13;
+
+          background-color: white;
+          color: black;
+          padding: 5em;
+
+          display: flex;
+          flex-direction: column;
+
+          h1 {
+            margin-bottom: 1em;
+          }
+
+          a {
+            font-size: 2em;
+            margin-bottom: 1em;
+            margin-left: 0.5em;
+
+            i {
+              margin-right: 1em;
+            }
+          }
+
+          ul {
+            li {
+              font-size: 2em;
+              margin-left: 0.5em;
+              margin-bottom: 1em;
+            }
+          }
+
+          p {
+            font-size: 2em;
+            margin-left: 0.5em;
+          }
         }
       }
     }
