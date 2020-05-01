@@ -147,5 +147,28 @@ canvas {
     padding: 0.5em;
   }
 }
+@media (min-width: 768px) {
+  .main__section__container {
+    text-align: center;
+  }
+  .main__section__container__list {
+    font-size: 3.5em;
+  }
+  .main__section__container__content-box {
+    font-size: 0.5em;
+    display: block;
+  }
+  .main__section__container__content-box__window {
+    display: flex;
+    margin-top: 2em;
+  }
+  .main__section__container__content-box__window a {
+    font-size: 2em;
+    align-items: flex-start;
+  }
+  .main .button-container button {
+    padding: 0.5em;
+  }
+}
 
 /*# sourceMappingURL=output.css.map */
